@@ -5,4 +5,4 @@
 
 | Module 名称                                                  | Module 介绍                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [neo-strategy-demo](./neo-strategy-demo) | spring策略模式                              |
+| [neo-strategy-demo](./neo-strategy-demo) | 使用注解的策略模式替换大片ifelse 让代码更优雅                              |
