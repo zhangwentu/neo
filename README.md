@@ -6,3 +6,4 @@
 | Module 名称                                                  | Module 介绍                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [neo-strategy-demo](./neo-strategy-demo) | 使用注解的策略模式替换大片ifelse 让代码更优雅                              |
+| [neo-es-demo](./neo-es-demo) | spring boot 下Elasticsearch 常用功能demo                              |
