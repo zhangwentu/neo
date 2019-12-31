@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>neo-strategy-demo</module>
+        <module>neo-ratelimit-demo</module>
     </modules>
 
     <properties>
@@ -22,6 +23,11 @@
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <hutool.version>4.6.3</hutool.version>
         <lombok.version>1.18.6</lombok.version>
+        <fastjson.version>1.2.46</fastjson.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <jedis.version>3.2.0</jedis.version>
+        <guava.version>18.0</guava.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -42,6 +48,33 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
