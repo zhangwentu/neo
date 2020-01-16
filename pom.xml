@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>neo-strategy-demo</module>
-        <module>neo-ratelimit-demo</module>
-        <module>neo-eureka-demo</module>
+        <module>neo-demo-strategy</module>
+        <module>neo-demo-ratelimit</module>
+        <module>neo-cloud-eureka</module>
     </modules>
 
     <properties>
