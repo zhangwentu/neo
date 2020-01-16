@@ -1,0 +1,24 @@
+#服务名称
+spring:
+  application:
+    name: eureka-server
+#服务启动端口
+server:
+  port: 10086
+logging:
+  config: classpath:logback.xml
+
+
+#主机地址
+eureka:
+  instance:
+    hostname: localhost
+  #这两个false表明这个服务为eureka server
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    #服务地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
