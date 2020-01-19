@@ -12,6 +12,7 @@
         <module>neo-demo-strategy</module>
         <module>neo-demo-ratelimit</module>
         <module>neo-cloud-eureka</module>
+        <module>neo-cloud-producer</module>
     </modules>
 
     <properties>
