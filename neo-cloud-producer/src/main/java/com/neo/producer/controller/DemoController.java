@@ -17,7 +17,7 @@ public class DemoController {
 
     @RequestMapping("/hello")
     public String hello(@RequestParam String name) {
-        log.info("[生产者服务] 接口测试 name:{}",name);
-        return name + "服务被调用";
+        log.info("[生产者服务] 接口测试 name:{}", name);
+        return "Hello " + name + ",服务被调用";
     }
 }

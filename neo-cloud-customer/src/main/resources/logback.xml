@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="logPath" value="/opt/logs/neo"/>
+    <property name="PATTERN" value="%date %-5level [%thread] %logger{50}\(%F:%L\) - %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] %logger{50}\(%F:%L\) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/info.log</file>
+    　　<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    　　　　<fileNamePattern>${logPath}/info.log.%d{yyyy-MM-dd-HH}</fileNamePattern>
+    　　　　<maxHistory>72</maxHistory>
+    　　</rollingPolicy>
+    　　<encoder>
+            <pattern>${PATTERN}</pattern>
+    　　</encoder>
+    </appender>
+
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/error.log</file>
+    　　<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    　　　　<fileNamePattern>${logPath}/error.log.%d{yyyy-MM-dd-HH}</fileNamePattern>
+    　　　　<maxHistory>72</maxHistory>
+    　　</rollingPolicy>
+    　　<encoder>
+            <pattern>${PATTERN}</pattern>
+    　　</encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="info" />
+        <appender-ref ref="error" />
+    </root>
+</configuration>
