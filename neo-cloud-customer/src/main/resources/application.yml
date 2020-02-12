@@ -4,7 +4,7 @@ spring:
     name: customer-server
 #服务启动端口
 server:
-  port: 10091
+  port: 10093
 logging:
   config: classpath:logback.xml
 
