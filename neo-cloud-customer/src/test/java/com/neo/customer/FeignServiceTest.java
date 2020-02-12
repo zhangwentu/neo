@@ -32,7 +32,7 @@ public class FeignServiceTest {
     }
 
     @Test
-    public void ribboTest() {
+    public void ribbonTest() {
         log.info(ribbonRestService.test("1"));
         log.info(ribbonRestService.test("2"));
         log.info(ribbonRestService.test("3"));

@@ -22,4 +22,8 @@ eureka:
     service-url:
       defaultZone:  http://127.0.0.1:10086/eureka/
 
+feign:
+  hystrix:
+    enabled: true #开启熔断
+
 
