@@ -14,6 +14,7 @@
         <module>neo-cloud-eureka</module>
         <module>neo-cloud-producer</module>
         <module>neo-cloud-customer</module>
+        <module>neo-cloud-zuul</module>
     </modules>
 
     <properties>

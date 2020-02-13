@@ -1,0 +1,46 @@
+#服务名称
+spring:
+  application:
+    name: zuul-server
+#服务启动端口
+server:
+  port: 10095
+logging:
+  config: classpath:logback.xml
+
+
+#主机地址
+eureka:
+  instance:
+    prefer-ip-address: true #优先使用ip地址的方式注册
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
+  client:
+    healthcheck:
+      enabled: true #服务健康检查
+    #服务地址
+    service-url:
+      defaultZone:  http://127.0.0.1:10086/eureka/
+
+
+zuul:
+  ignoredServices: '*' #只暴露配置了路由的服务 不配置会暴露注册中心其他的服务
+  sensitive-headers: Access-Control-Allow-Origin,Access-Control-Allow-Methods,Access-Control-Allow-Credentials,Access-Control-Allow-Headers,Access-Control-Expose-Headers,Access-Control-Max-Age
+  routes:
+    #本地服务
+    localTest:
+      path: /test/**
+      url: forward:/testDemo
+    #注册的微服务
+    equip-service:
+      path: /producer-server/**
+      serviceId: producer-server
+    #自定义路由(可以访问未注册的外部服务)
+    demo:
+      path: /demo-producer-server/**
+      url: http://127.0.0.1:10091 #自定义路由路径
+  host:
+    connect-timeout-millis: 10000 #url方式的超时设置
+    socket-timeout-millis: 3000
+
+
