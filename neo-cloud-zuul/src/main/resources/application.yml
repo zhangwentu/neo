@@ -40,7 +40,8 @@ zuul:
       path: /demo-producer-server/**
       url: http://127.0.0.1:10091 #自定义路由路径
   host:
-    connect-timeout-millis: 10000 #url方式的超时设置
-    socket-timeout-millis: 3000
-
-
+    connect-timeout-millis: 1000 #url方式的超时设置
+    socket-timeout-millis: 300
+ribbon:
+  ReadTimeout:  1000
+  ConnectTimeout:  300
