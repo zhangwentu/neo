@@ -28,11 +28,11 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public String handle(OrderDTO dto) {
         int type = dto.getType();
-        if (type == 1) {
+        if (type == 0) {
             return normalHandler.handle(dto);
-        } else if (type == 2) {
+        } else if (type == 1) {
             return groupHandler.handle(dto);
-        } else if (type == 3) {
+        } else if (type == 2) {
             return discountHandler.handle(dto);
         }
         return null;
