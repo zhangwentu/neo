@@ -1,0 +1,16 @@
+server:
+  port: 10086
+logging:
+  config:
+    classpath: logback.xml
+
+tio:
+  core:
+    server:
+      # websocket port default 9876
+      port: 6789
+      # 心跳时间
+      heartbeat-timeout: 60000
+      # 监控时段,多个之间用逗号隔开
+      ip-stat-durations: [60]
+

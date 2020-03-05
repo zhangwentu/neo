@@ -15,6 +15,8 @@
         <module>neo-cloud-producer</module>
         <module>neo-cloud-customer</module>
         <module>neo-cloud-zuul</module>
+        <module>neo-tio-socketserver</module>
+        <module>neo-tio-socketclient</module>
     </modules>
 
     <properties>
@@ -32,6 +34,8 @@
         <commons-lang3.version>3.5</commons-lang3.version>
         <jedis.version>3.2.0</jedis.version>
         <guava.version>18.0</guava.version>
+        <tio.version>3.5.9.v20200214-RELEASE</tio.version>
+
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -86,6 +90,11 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.t-io</groupId>
+                <artifactId>tio-core-spring-boot-starter</artifactId>
+                <version>${tio.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
