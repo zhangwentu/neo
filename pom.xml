@@ -17,6 +17,7 @@
         <module>neo-cloud-zuul</module>
         <module>neo-tio-socketserver</module>
         <module>neo-tio-socketclient</module>
+        <module>neo-tio-websocketserver</module>
     </modules>
 
     <properties>
@@ -94,6 +95,11 @@
             <dependency>
                 <groupId>org.t-io</groupId>
                 <artifactId>tio-core-spring-boot-starter</artifactId>
+                <version>${tio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.t-io</groupId>
+                <artifactId>tio-websocket-spring-boot-starter</artifactId>
                 <version>${tio.version}</version>
             </dependency>
         </dependencies>
