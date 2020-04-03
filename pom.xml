@@ -18,6 +18,7 @@
         <module>neo-tio-socketserver</module>
         <module>neo-tio-socketclient</module>
         <module>neo-tio-websocketserver</module>
+        <module>neo-demo-easypoi</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
         <jedis.version>3.2.0</jedis.version>
         <guava.version>18.0</guava.version>
         <tio.version>3.5.9.v20200214-RELEASE</tio.version>
+        <easypoi.version>3.2.0</easypoi.version>
 
     </properties>
     <dependencyManagement>
@@ -101,6 +103,24 @@
                 <groupId>org.t-io</groupId>
                 <artifactId>tio-websocket-spring-boot-starter</artifactId>
                 <version>${tio.version}</version>
+            </dependency>
+
+            <!-- commons-easypoi -->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-web</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-annotation</artifactId>
+                <version>${easypoi.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
