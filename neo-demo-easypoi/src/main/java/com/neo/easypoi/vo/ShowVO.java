@@ -11,8 +11,8 @@ import lombok.Data;
  */
 @Data
 public class ShowVO {
-    public ShowVO() {
-    }
+//    public ShowVO() {
+//    }
 
     public ShowVO(String deptName, String assetName, String oldAssetName, String brand, String model) {
         this.deptName = deptName;
