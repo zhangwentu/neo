@@ -19,6 +19,7 @@
         <module>neo-tio-socketclient</module>
         <module>neo-tio-websocketserver</module>
         <module>neo-demo-easypoi</module>
+        <module>neo-demo-small</module>
     </modules>
 
     <properties>
