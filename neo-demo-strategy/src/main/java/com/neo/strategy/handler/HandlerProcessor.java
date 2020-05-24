@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * <p></p>
+ * <p>实现BeanFactoryPostProcessor 在spring beanFactory初始化完成之后会被调用</p>
  *
  * @author neo
  * @date 2019/12/4 13:58
