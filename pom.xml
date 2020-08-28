@@ -20,6 +20,7 @@
         <module>neo-tio-websocketserver</module>
         <module>neo-demo-easypoi</module>
         <module>neo-demo-small</module>
+        <module>neo-demo-lock</module>
     </modules>
 
     <properties>
