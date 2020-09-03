@@ -21,6 +21,8 @@
         <module>neo-demo-easypoi</module>
         <module>neo-demo-small</module>
         <module>neo-demo-lock</module>
+        <module>neo-dome-thread</module>
+        <module>neo-deom-screw</module>
     </modules>
 
     <properties>
@@ -40,6 +42,8 @@
         <guava.version>18.0</guava.version>
         <tio.version>3.5.9.v20200214-RELEASE</tio.version>
         <easypoi.version>3.2.0</easypoi.version>
+        <screw.version>1.0.5</screw.version>
+
 
     </properties>
     <dependencyManagement>
@@ -123,6 +127,11 @@
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-annotation</artifactId>
                 <version>${easypoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.smallbun.screw</groupId>
+                <artifactId>screw-extension</artifactId>
+                <version>${screw.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
