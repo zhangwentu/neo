@@ -23,6 +23,7 @@
         <module>neo-demo-lock</module>
         <module>neo-dome-thread</module>
         <module>neo-deom-screw</module>
+        <module>neo-wechat-pay</module>
     </modules>
 
     <properties>
