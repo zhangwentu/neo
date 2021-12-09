@@ -4,13 +4,12 @@ import cn.hutool.core.lang.UUID;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson.JSON;
-import com.neo.wechatpay.dto.PayResponseDTO;
-import com.neo.wechatpay.dto.PlaceOrderBodyDTO;
-import com.neo.wechatpay.dto.PlaceOrderResponseDTO;
-import com.neo.wechatpay.dto.SyncOrderBodyDTO;
+import com.github.binarywang.wxpay.bean.result.WxPayBillResult;
+import com.github.binarywang.wxpay.service.WxPayService;
+import com.neo.wechatpay.dto.*;
 import com.neo.wechatpay.util.WechatAuthUtils;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -23,10 +22,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-@AllArgsConstructor
 public class WechatPayServiceImpl implements WechatPayService {
 
-    @Value("${mp.appId}")
+
+    @Autowired
+    private WxPayService wxPayService;
+
+    @Value("${wechat.appId}")
     private String wechatAppId;
     @Value("${wechat.mchId}")
     private String wechatMchId;
@@ -90,4 +92,59 @@ public class WechatPayServiceImpl implements WechatPayService {
     public String syncRefund() {
         return null;
     }
+
+    @Override
+    public WxPayBillResult getTradeBill(TradeBillParams params) {
+        try {
+            return wxPayService.downloadBill(params.getBillDate(), params.getBillType(), params.getTarType(), null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public String getTradeBillUrl(TradeBillParams params) {
+        try {
+            return wxPayService.downloadRawBill(params.getBillDate(), params.getBillType(), params.getTarType(), null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+//    @Override
+//    public String getTradeBill(TradeBillParams params) {
+//        log.info("[微信接口] 获取账单，请求 params:{}", JSON.toJSONString(params));
+//        if (StrUtil.isBlank(params.getBillDate())) {
+//            log.error("[微信接口] 获取账单，请求参数异常 params:{}", JSON.toJSONString(params));
+//            return null;
+//        }
+//        try {
+//            String path = "v3/bill/tradebill?bill_date=" + params.getBillDate();
+//            if (StrUtil.isNotBlank(params.getBillType())) {
+//                path = path + "&bill_type=+" + params.getBillType();
+//            }
+//            if (StrUtil.isNotBlank(params.getTarType())) {
+//                path = path + "&tar_type=" + params.getTarType();
+//            }
+//            long timestamp = System.currentTimeMillis() / 1000;
+//            String nonceStr = UUID.fastUUID().toString(true);
+//            String url = WECHAT_PAY_HOST + path;
+//            String signature = WechatPayAuthUtils.getToken(HttpMethod.GET.toString(), url, null, nonceStr, wechatMchId, serialNo, privateKey);
+//            HttpResponse response = HttpRequest.get(url)
+//                    .header("Authorization", signature)
+//                    .header("mchid", wechatMchId)
+//                    .header("nonce_str", nonceStr)
+//                    .header("timestamp", String.valueOf(timestamp))
+//                    .header("serial_no", serialNo)
+//                    .execute();
+//            String res = response.body();
+//            log.info("[微信接口] 获取账单，响应 params:{},res:{}", JSON.toJSONString(params), res);
+//            return res;
+//        } catch (Exception e) {
+//            log.error("[微信接口] 获取账单 params:{}", JSON.toJSONString(params), e);
+//        }
+//        return null;
+//    }
 }

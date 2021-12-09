@@ -1,9 +1,7 @@
 package com.neo.wechatpay.service;
 
-import com.neo.wechatpay.dto.PayResponseDTO;
-import com.neo.wechatpay.dto.PlaceOrderBodyDTO;
-import com.neo.wechatpay.dto.PlaceOrderResponseDTO;
-import com.neo.wechatpay.dto.SyncOrderBodyDTO;
+import com.github.binarywang.wxpay.bean.result.WxPayBillResult;
+import com.neo.wechatpay.dto.*;
 
 /**
  * <p>微信支付相关业务</p>
@@ -50,4 +48,21 @@ public interface WechatPayService {
      * todo
      */
     String syncRefund();
+
+
+    /**
+     * 申请交易账单
+     *
+     * @param params 参数
+     * @return 响应
+     */
+    WxPayBillResult getTradeBill(TradeBillParams params);
+
+    /**
+     * 申请交易账单
+     *
+     * @param params 参数
+     * @return 响应链接
+     */
+    String getTradeBillUrl(TradeBillParams params);
 }

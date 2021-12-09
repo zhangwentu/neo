@@ -44,6 +44,7 @@
         <tio.version>3.5.9.v20200214-RELEASE</tio.version>
         <easypoi.version>3.2.0</easypoi.version>
         <screw.version>1.0.5</screw.version>
+        <weixin-java-pay.version>4.0.0</weixin-java-pay.version>
 
 
     </properties>
@@ -133,6 +134,11 @@
                 <groupId>cn.smallbun.screw</groupId>
                 <artifactId>screw-extension</artifactId>
                 <version>${screw.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-pay</artifactId>
+                <version>${weixin-java-pay.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

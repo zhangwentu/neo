@@ -13,8 +13,8 @@
     <properties>
         <username>root</username>
         <password>123456</password>
-        <jdbcUrl>jdbc:mysql://127.0.0.1:3306/insurance-tool</jdbcUrl>
-        <title>救援工具表设计</title>
+        <jdbcUrl>jdbc:mysql://127.0.0.1:3306/ppl</jdbcUrl>
+        <title>启彧康护</title>
     </properties>
 
     <build>
