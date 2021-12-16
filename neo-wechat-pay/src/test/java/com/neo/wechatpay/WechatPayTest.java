@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.stream.Collectors;
+
 /**
  * @author neo
  * @date 2021/12/9 13:05
@@ -26,11 +28,14 @@ public class WechatPayTest {
     @Test
     public void handle() {
         TradeBillParams params = new TradeBillParams();
-        params.setBillDate("20211208");
+        params.setBillDate("20211209");
         params.setBillType("ALL");
         WxPayBillResult result = wechatPayService.getTradeBill(params);
         log.info(JSON.toJSONString(result));
 //        log.info(JSON.toJSONString(wechatPayService.getTradeBillUrl(params)));
 
+        log.info(JSON.toJSONString(result.getBillInfoList().stream()
+                .filter(bill -> bill.getOutTradeNo().equals("DD716389462685659"))
+                .collect(Collectors.toList())));
     }
 }
