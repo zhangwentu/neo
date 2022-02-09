@@ -1,5 +1,7 @@
 package com.neo.wechatpay.service;
 
+import com.github.binarywang.wxpay.bean.order.WxPayMpOrderResult;
+import com.github.binarywang.wxpay.bean.request.WxPayUnifiedOrderV3Request;
 import com.github.binarywang.wxpay.bean.result.WxPayBillResult;
 import com.neo.wechatpay.dto.*;
 
@@ -12,12 +14,12 @@ import com.neo.wechatpay.dto.*;
 public interface WechatPayService {
 
     /**
-     * 统一下单
+     * 统一下单V3
      *
-     * @param placeOrderBodyDTO 下单信息
-     * @return PlaceOrderResponseDTO  响应信息
+     * @param request 下单信息
+     * @return WxPayMpOrderResult  响应信息
      */
-    PlaceOrderResponseDTO placeOrder(PlaceOrderBodyDTO placeOrderBodyDTO);
+    WxPayMpOrderResult creatOrderV3(WxPayUnifiedOrderV3Request request);
 
     /**
      * 查询订单

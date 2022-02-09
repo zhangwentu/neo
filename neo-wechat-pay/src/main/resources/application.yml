@@ -5,9 +5,6 @@ logging:
   classpath: logback.xml
 
 wechat:
-  appId: wxf85a55e8d3bca4df
-  mchId: 1549029851
-#  apiV3Key:
-  apiV3Key:
-  serialNo: 111
+  appId: wxc465dfb895d7e038
+  mchId: 1620168887
 

@@ -42,12 +42,12 @@
         <commons.lang.version>2.6</commons.lang.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <jedis.version>3.2.0</jedis.version>
-        <guava.version>18.0</guava.version>
+        <guava.version>30.0-jre</guava.version>
         <tio-springboot.version>3.5.9.v20200214-RELEASE</tio-springboot.version>
         <tio.version>3.7.2.v20210316-RELEASE</tio.version>
         <easypoi.version>3.2.0</easypoi.version>
         <screw.version>1.0.5</screw.version>
-        <weixin-java-pay.version>4.0.0</weixin-java-pay.version>
+        <weixin-java-pay.version>4.2.0</weixin-java-pay.version>
         <poi-ooxml.version>5.0.0</poi-ooxml.version>
     </properties>
     <dependencyManagement>
