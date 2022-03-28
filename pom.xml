@@ -17,7 +17,7 @@
         <module>neo-cloud-zuul</module>
         <module>neo-tio-socketserver</module>
         <module>neo-tio-socketclient</module>
-        <module>neo-tio-websocketserver</module>
+        <module>neo-tio-ws-client</module>
         <module>neo-demo-easypoi</module>
         <module>neo-demo-small</module>
         <module>neo-demo-lock</module>
@@ -26,6 +26,7 @@
         <module>neo-wechat-pay</module>
         <module>neo-tio-udp</module>
         <module>neo-demo-math</module>
+        <module>neo-tio-ws-client</module>
     </modules>
 
     <properties>
@@ -44,7 +45,8 @@
         <jedis.version>3.2.0</jedis.version>
         <guava.version>30.0-jre</guava.version>
         <tio-springboot.version>3.5.9.v20200214-RELEASE</tio-springboot.version>
-        <tio.version>3.7.2.v20210316-RELEASE</tio.version>
+        <tio.version>3.7.4.v20210808-RELEASE</tio.version>
+        <tio.wsclient.version>3.7.4.v20210808-RELEASE</tio.wsclient.version>
         <easypoi.version>3.2.0</easypoi.version>
         <screw.version>1.0.5</screw.version>
         <weixin-java-pay.version>4.2.0</weixin-java-pay.version>
@@ -114,6 +116,11 @@
                 <groupId>org.t-io</groupId>
                 <artifactId>tio-websocket-spring-boot-starter</artifactId>
                 <version>${tio-springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.t-io</groupId>
+                <artifactId>tio-websocket-client</artifactId>
+                <version>${tio.wsclient.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.t-io</groupId>
