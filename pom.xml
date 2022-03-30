@@ -27,6 +27,7 @@
         <module>neo-tio-udp</module>
         <module>neo-demo-math</module>
         <module>neo-tio-ws-client</module>
+        <module>neo-demo-ws-client</module>
     </modules>
 
     <properties>
@@ -51,6 +52,7 @@
         <screw.version>1.0.5</screw.version>
         <weixin-java-pay.version>4.2.0</weixin-java-pay.version>
         <poi-ooxml.version>5.0.0</poi-ooxml.version>
+        <java-ws-version>1.5.2</java-ws-version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -159,6 +161,12 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi-ooxml.version}</version>
+            </dependency>
+            <!--websocket-->
+            <dependency>
+                <groupId>org.java-websocket</groupId>
+                <artifactId>Java-WebSocket</artifactId>
+                <version>${java-ws-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
