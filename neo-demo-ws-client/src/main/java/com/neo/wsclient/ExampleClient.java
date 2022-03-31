@@ -4,6 +4,8 @@ import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.handshake.ServerHandshake;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
@@ -55,6 +57,7 @@ public class ExampleClient extends WebSocketClient {
     public static void main(String[] args) throws URISyntaxException, InterruptedException {
         ExampleClient client = new ExampleClient(new URI("wss://ws.okx.com:8443/ws/v5/public"));
         // more about drafts here: http://github.com/TooTallNate/Java-WebSocket/wiki/Drafts
+        client.setProxy(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", 1080)));
         if (client.connectBlocking(10, TimeUnit.SECONDS)) {
             System.out.println("建立websocket连接");
 //            client.send("{\"op\":\"subscribe\",\"args\":[{\"channel\":\"books5\",\"instId\":\"BTC-USDT\"}," +
