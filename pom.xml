@@ -44,7 +44,7 @@
         <commons.lang.version>2.6</commons.lang.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <jedis.version>3.2.0</jedis.version>
-        <guava.version>30.0-jre</guava.version>
+        <guava.version>32.0.0-jre</guava.version>
         <tio-springboot.version>3.5.9.v20200214-RELEASE</tio-springboot.version>
         <tio.version>3.7.4.v20210808-RELEASE</tio.version>
         <tio.wsclient.version>3.7.4.v20210808-RELEASE</tio.wsclient.version>
